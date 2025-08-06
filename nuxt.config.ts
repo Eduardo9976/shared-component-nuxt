@@ -16,8 +16,12 @@ export default defineNuxtConfig({
         fileName: () => 'my-button.js',
       },
       rollupOptions: {
+        external: ['vue'],
         output: {
           inlineDynamicImports: true,
+          globals: {
+            vue: 'Vue'
+          }
         },
       },
     },
